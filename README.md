@@ -1,92 +1,70 @@
-# Word Sense Disambiguation (WSD) using WordNet
+# Word Sense Disambiguation Using WordNet
 
-A beginner-friendly NLP mini-project that identifies the likely meaning of an ambiguous word in a sentence using WordNet and a simplified Lesk algorithm.
+## Project Overview
+This project focuses on Word Sense Disambiguation (WSD), a Natural Language Processing (NLP) task used to identify the correct meaning of an ambiguous word based on its context. It uses WordNet to explore different word senses and their lexical relationships.
 
-## Features
-- Explore possible WordNet senses for an ambiguous word.
-- Display definitions, examples, synonyms, and lexical relations.
-- Disambiguate a target word in a sentence using context overlap (Lesk-style).
-- Run the algorithm on sample sentences.
-- Export annotations and predictions to CSV/JSON.
-- Create a short analysis report.
-- Streamlit interface plus a command-line runner.
+## Objectives
+- Identify different senses of ambiguous words.
+- Explore WordNet and its lexical relations.
+- Apply a WSD algorithm to sample sentences.
+- Examine word meanings and definitions in context.
+- Generate sense inventory or annotation output.
+- Analyze WSD results for sample text.
 
-## Requirements
-- Python 3.10 or newer
-- Internet access for the first-time NLTK WordNet download (unless WordNet is already installed)
-- Packages listed in `requirements.txt`
+## Technologies Used
+- Python
+- NLTK WordNet
+- Natural Language Processing (NLP)
+- spaCy, Scikit-learn, and Pandas, where applicable
 
-## Windows PowerShell setup (VS Code)
+## Key Features
+- Identification of multiple word senses.
+- Exploration of WordNet lexical relations.
+- Context-based word sense analysis.
+- WSD results for sample sentences.
+- Sense definitions and annotation output.
 
-Open PowerShell in this project folder and run:
+## Methodology
+1. Select sample sentences containing ambiguous words.
+2. Identify possible meanings using WordNet.
+3. Examine lexical relations and word definitions.
+4. Apply the implemented WSD algorithm to select the intended sense.
+5. Analyze the results based on sentence context.
 
-```powershell
-py -3.11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-python setup_nltk.py
-streamlit run app.py
-```
+## Sample Examples
+- **Bank:** “He deposited money in the bank.”
+- **Bank:** “She sat on the bank of the river.”
+- **Bat:** “The player swung the bat.”
+- **Bat:** “A bat flew out of the cave.”
 
-If PowerShell blocks activation, you can avoid activation and run:
+These examples demonstrate how the same word can have different meanings depending on its context.
 
-```powershell
-py -3.11 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe setup_nltk.py
-.\.venv\Scripts\python.exe -m streamlit run app.py
-```
+## Expected Outcomes
+- Identification of different senses of ambiguous words.
+- Exploration of WordNet lexical relationships.
+- WSD results for sample text.
+- Sense inventory or annotation output.
+- A short analysis report.
 
-Open the local URL printed by Streamlit (normally `http://localhost:8501`).
+## Applications
+- Natural Language Processing.
+- Semantic text analysis.
+- Language understanding.
+- Lexical ambiguity resolution.
+- NLP research and education.
 
-### Command-line mode
-After installing requirements and downloading WordNet:
+## Future Enhancements
+- Support for additional WSD algorithms.
+- Analysis of larger text datasets.
+- Interactive visualization of word senses.
+- Evaluation using annotated datasets.
+- Improved context-based sense selection.
 
-```powershell
-python wsd_cli.py --word bank --sentence "She deposited money at the bank."
-python wsd_cli.py --samples
-```
+## Academic Information
+**Project:** Word Sense Disambiguation Using WordNet  
+**Domain:** Natural Language Processing (NLP)  
+**Course Outcome:** CO5  
+**Bloom’s Taxonomy Level:** L3 – Apply
 
-### If WordNet cannot be downloaded
-Run `python setup_nltk.py` again while connected to the internet. On a restricted network, download the NLTK `wordnet` and `omw-1.4` corpora using NLTK's downloader or place them in a standard NLTK data directory. The app displays an actionable error if WordNet is unavailable.
-
-## Project structure
-
-```text
-word_sense_disambiguation_project/
-├── app.py                 # Streamlit user interface
-├── wsd.py                 # WordNet utilities and Lesk-style algorithm
-├── wsd_cli.py             # Command-line interface
-├── setup_nltk.py          # Downloads required NLTK data
-├── requirements.txt
-├── data/sample_sentences.csv
-├── outputs/               # Generated CSV, JSON, and report files
-└── tests/test_wsd.py      # Unit tests for tokenization/scoring helpers
-```
-
-## Algorithm overview
-1. Normalize the sentence and tokenize it.
-2. Retrieve WordNet synsets for the target word.
-3. For each sense, collect words from its definition, examples, lemma names, and related synsets.
-4. Compare the sense vocabulary with the sentence context, excluding the target word.
-5. Select the sense with the largest overlap. If all scores are zero, use WordNet's first (most frequent) sense as a fallback.
-6. Display the predicted sense and supporting evidence.
-
-This is a lightweight educational WSD system, not a substitute for human annotation. The simplified Lesk method can make mistakes, especially when context is short.
-
-## Deliverables
-- Sense inventory for a target word
-- WSD prediction and annotation output for sample text
-- CSV/JSON exports
-- Short analysis report
-- Source code and tests
-
-## Example words
-`bank`, `bat`, `apple`, `light`, `plant`, `crane`, `rock`, `spring`
-
-## Troubleshooting
-- **`ModuleNotFoundError: No module named 'streamlit'`**: activate the project environment and run `pip install -r requirements.txt`.
-- **WordNet resource not found**: run `python setup_nltk.py`.
-- **No sense found**: check spelling and use a single English word, e.g. `bank`.
+## Conclusion
+This project demonstrates the importance of word sense disambiguation in understanding natural language. By exploring WordNet and applying a WSD algorithm, the system aims to identify the intended meanings of ambiguous words and analyze their lexical relationships in context.
