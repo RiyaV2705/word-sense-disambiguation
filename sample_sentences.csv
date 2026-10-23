@@ -1,0 +1,11 @@
+word,sentence,expected_sense,notes
+bank,She deposited money at the bank.,financial_institution,Money/finance context
+bank,The children had a picnic on the river bank.,sloping_land,Water/land context
+bat,The bat flew out of the cave at dusk.,flying_mammal,Animal context
+bat,He swung the bat and hit the ball.,sports_equipment,Baseball context
+light,Please turn on the light in the room.,illumination,Room/electricity context
+plant,The plant needs water and sunlight.,living_organism,Gardening context
+crane,The crane lifted the steel beam.,lifting_machine,Construction context
+spring,Flowers bloom in spring.,season,Time of year context
+rock,The boat hit a rock near the shore.,stone,Geology context
+apple,She ate an apple after lunch.,fruit,Food context
